@@ -30,7 +30,7 @@ export const Header = () => {
         />
       )}
       
-      <header className="fixed top-0 z-50 w-full border-b bg-yellow-100/95 backdrop-blur-sm">
+      <header className="fixed top-0 z-50 w-full border-b border-gray-200/30 bg-[#fff672] backdrop-blur-sm shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between py-1">
             <Logo />
@@ -47,7 +47,7 @@ export const Header = () => {
             <button
               type="button"
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="md:hidden p-2 rounded-md text-gray-800 hover:text-blue-700 hover:bg-white/20 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center ">
@@ -70,7 +70,7 @@ export const Header = () => {
             ? 'max-h-96 opacity-100' 
             : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-yellow-100 border-t border-white/10">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/10 border-t border-white/20">
             <div className="flex flex-col space-y-2">
               <NavLink href="/equipe" onClick={closeMenu}>Equipe</NavLink>
               <NavLink href="/atividades" onClick={closeMenu}>Atividades</NavLink>

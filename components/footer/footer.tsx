@@ -15,7 +15,7 @@ export const Footer = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">LINC</h3>
-                <p className="text-sm text-gray-300">Liga de Neurologia Clínica</p>
+                <p className="text-sm text-gray-300">Liga Acadêmica de Neurologia Clínica</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -133,7 +133,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-gray-400">
-              <p>© 2024 Liga de Neurologia Clínica. Todos os direitos reservados.</p>
+              <p>© 2024 Liga Acadêmica de Neurologia Clínica. Todos os direitos reservados.</p>
               <p className="mt-1">
                 Desenvolvido com ❤️ para a comunidade neurológica
               </p>

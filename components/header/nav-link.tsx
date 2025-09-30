@@ -23,8 +23,8 @@ export const NavLink = ({ href, children, onClick }: NavLinkProps) => {
   return (
     <Link 
       className={cn(
-        'text-sm font-medium transition-colors hover:text-primary text-foreground',
-        isActive(href) && 'text-primary'
+        'text-sm font-semibold transition-colors hover:text-blue-700 text-gray-800 hover:bg-white/20 px-3 py-2 rounded-lg',
+        isActive(href) && 'text-blue-700 bg-white/30'
       )} 
       href={href}
       onClick={onClick}

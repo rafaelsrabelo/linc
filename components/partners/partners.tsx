@@ -112,32 +112,44 @@ export const Partners = () => {
           </p>
         </div>
 
-        {/* Filtros */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            const isActive = filter === category.key;
-            
-            return (
-              <button
-                key={category.key}
-                type="button"
-                onClick={() => setFilter(category.key)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
-                  isActive
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                {category.title}
-              </button>
-            );
-          })}
-        </div>
 
-        {/* Carousel */}
-        <div className="relative">
+        {/* Carousel de Parceiros com botões laterais */}
+        <div className="relative mb-16">
+          {/* Botão Anterior - Esquerda */}
+          <button 
+            type="button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
+                if (prevButton) prevButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para esquerda</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Botão Próximo - Direita */}
+          <button 
+            type="button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
+                if (nextButton) nextButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para direita</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           <Carousel
             opts={{
               align: "start",
@@ -146,39 +158,31 @@ export const Partners = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {filteredPartners.map((partner) => (
+              {partners.filter(partner => partner.type === 'parceiro').map((partner) => (
                 <CarouselItem key={partner.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Building2 className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                          {partner.name}
-                        </h4>
-                        <p className="text-sm text-primary font-medium mb-2">
-                          {partner.category}
-                        </p>
-                        <p className="text-sm text-gray-600 mb-3">
-                          {partner.description}
-                        </p>
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                    {/* Conteúdo principal */}
+                    <div className="flex-1">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Building2 className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                            {partner.name}
+                          </h4>
+                          <p className="text-sm text-primary font-medium mb-2">
+                            {partner.category}
+                          </p>
+                          <p className="text-sm text-gray-600 mb-3">
+                            {partner.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                     
-                    <div className="mb-4">
-                      <h5 className="text-sm font-semibold text-gray-900 mb-2">Benefícios:</h5>
-                      <ul className="space-y-1">
-                        {partner.benefits.map((benefit, index) => (
-                          <li key={index.toString()} className="text-sm text-gray-600 flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="flex gap-2">
+                    {/* Links sempre na parte inferior */}
+                    <div className="flex gap-2 mt-auto">
                       {partner.website && (
                         <a 
                           href={partner.website}
@@ -204,9 +208,60 @@ export const Partners = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            {/* Setas ocultas para funcionalidade */}
+            <CarouselPrevious className="hidden" />
+            <CarouselNext className="hidden" />
           </Carousel>
+        </div>
+
+        {/* Seção de Patrocinadores */}
+        <div className="bg-gray-50 rounded-2xl p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Nossos Patrocinadores</h3>
+            <p className="text-gray-600">
+              Empresas que apoiam nossa missão de promover a excelência em neurologia clínica
+            </p>
+          </div>
+          
+          {/* Carousel Automático de Patrocinadores */}
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "center",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {partners.filter(partner => partner.type === 'patrocinador').map((partner) => (
+                  <CarouselItem key={partner.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full text-center">
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                        <Building2 className="w-8 h-8 text-primary" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                        {partner.name}
+                      </h4>
+                      <p className="text-sm text-gray-600 mb-4">
+                        {partner.description}
+                      </p>
+                      {partner.website && (
+                        <a 
+                          href={partner.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Website
+                        </a>
+                      )}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
         </div>
       </div>
     </section>

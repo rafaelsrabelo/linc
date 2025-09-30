@@ -132,7 +132,7 @@ export const Team = () => {
             Conheça Nossa Equipe
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Profissionais dedicados e experientes que formam a base da Liga de Neurologia Clínica.
+            Profissionais dedicados e experientes que formam a base da Liga Acadêmica de Neurologia Clínica.
           </p>
         </div>
 
@@ -229,7 +229,7 @@ export const Team = () => {
             Quer Fazer Parte da Nossa Equipe?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Junte-se à Liga de Neurologia Clínica e faça parte de uma comunidade 
+            Junte-se à Liga Acadêmica de Neurologia Clínica e faça parte de uma comunidade 
             dedicada ao avanço do conhecimento em neurologia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

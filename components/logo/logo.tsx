@@ -9,8 +9,7 @@ export const Logo = ({ className = "" }: LogoProps) => {
     <Link 
       href="/" 
       title="LINC Academy | Página Inicial"
-      className={`text-foreground font-bold text-xl hover:text-primary transition-colors py-1 ${className}`
-    }
+      className={`text-gray-800 font-bold text-xl hover:text-blue-700 transition-colors py-1 ${className}`}
     >
       <Image src="/logo.png" alt="Logo" width={60} height={60} className="object-contain" />
     </Link>

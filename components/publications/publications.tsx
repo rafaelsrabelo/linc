@@ -106,7 +106,7 @@ const publications: Publication[] = [
     title: 'LINC Academy é Destaque em Revista Médica',
     type: 'press',
     category: 'Press',
-    description: 'Matéria sobre os avanços da Liga de Neurologia Clínica em revista especializada.',
+    description: 'Matéria sobre os avanços da Liga Acadêmica de Neurologia Clínica em revista especializada.',
     date: '15 de Novembro, 2024',
     author: 'Revista Médica',
     tags: ['Mídia', 'Destaque', 'Reconhecimento'],
@@ -162,36 +162,48 @@ export const Publications = () => {
             Conteúdo e Notícias
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Acompanhe as últimas publicações, notícias e materiais didáticos da Liga de Neurologia Clínica.
+            Acompanhe as últimas publicações, notícias e materiais didáticos da Liga Acadêmica de Neurologia Clínica.
           </p>
         </div>
 
-        {/* Filtros */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            const isActive = filter === category.key;
-            
-            return (
-              <button
-                key={category.key}
-                type="button"
-                onClick={() => setFilter(category.key)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
-                  isActive
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                {category.title}
-              </button>
-            );
-          })}
-        </div>
 
-        {/* Carousel */}
+        {/* Carousel com botões laterais */}
         <div className="relative">
+          {/* Botão Anterior - Esquerda */}
+          <button 
+            type="button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
+                if (prevButton) prevButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para esquerda</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Botão Próximo - Direita */}
+          <button 
+            type="button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
+                if (nextButton) nextButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para direita</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           <Carousel
             opts={{
               align: "start",
@@ -206,41 +218,45 @@ export const Publications = () => {
                 
                 return (
                   <CarouselItem key={publication.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${colorClass}`}>
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1">
-                          <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${colorClass} mb-2`}>
-                            {publication.category}
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                      {/* Conteúdo principal */}
+                      <div className="flex-1">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className={`flex items-center justify-center w-10 h-10 rounded-lg ${colorClass}`}>
+                            <Icon className="w-5 h-5" />
                           </div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                            {publication.title}
-                          </h4>
-                          <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                            {publication.description}
-                          </p>
+                          <div className="flex-1">
+                            <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${colorClass} mb-2`}>
+                              {publication.category}
+                            </div>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                              {publication.title}
+                            </h4>
+                            <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                              {publication.description}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4" />
+                            <span>{publication.date}</span>
+                          </div>
+                          <span>{publication.author}</span>
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {publication.tags.map((tag, index) => (
+                            <span key={index.toString()} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                              {tag}
+                            </span>
+                          ))}
                         </div>
                       </div>
                       
-                      <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          <span>{publication.date}</span>
-                        </div>
-                        <span>{publication.author}</span>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {publication.tags.map((tag, index) => (
-                          <span key={index.toString()} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      <div className="flex gap-2">
+                      {/* Links sempre na parte inferior */}
+                      <div className="flex gap-2 mt-auto">
                         {publication.link && (
                           <a 
                             href={publication.link}
@@ -265,31 +281,12 @@ export const Publications = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            {/* Setas ocultas para funcionalidade */}
+            <CarouselPrevious className="hidden" />
+            <CarouselNext className="hidden" />
           </Carousel>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-br from-primary to-blue-600 text-white rounded-3xl p-8 text-center">
-          <h3 className="text-3xl font-bold mb-4">
-            Mantenha-se Atualizado
-          </h3>
-          <p className="text-xl text-white/90 mb-6 max-w-2xl mx-auto">
-            Receba as últimas publicações e notícias da Liga de Neurologia Clínica 
-            diretamente no seu e-mail.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Seu e-mail"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button type="button" className="px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Inscrever-se
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -115,30 +115,44 @@ export const Events = () => {
           </p>
         </div>
 
-        {/* Filtros */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filterOption) => {
-            const isActive = filter === filterOption.key;
-            
-            return (
-              <button
-                key={filterOption.key}
-                type="button"
-                onClick={() => setFilter(filterOption.key)}
-                className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  isActive
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                }`}
-              >
-                {filterOption.title}
-              </button>
-            );
-          })}
-        </div>
 
-        {/* Carousel */}
+        {/* Carousel com botões laterais */}
         <div className="relative">
+          {/* Botão Anterior - Esquerda */}
+          <button 
+            type="button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
+                if (prevButton) prevButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para esquerda</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Botão Próximo - Direita */}
+          <button 
+            type="button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            onClick={() => {
+              const carousel = document.querySelector('[data-slot="carousel"]');
+              if (carousel) {
+                const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
+                if (nextButton) nextButton.click();
+              }
+            }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Seta para direita</title>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           <Carousel
             opts={{
               align: "start",
@@ -149,39 +163,43 @@ export const Events = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {filteredEvents.map((event) => (
                 <CarouselItem key={event.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 line-clamp-3">
-                        {event.description}
-                      </p>
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                    {/* Conteúdo principal */}
+                    <div className="flex-1">
+                      <div className="mb-4">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                          {event.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 line-clamp-3">
+                          {event.description}
+                        </p>
+                      </div>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <Calendar className="w-4 h-4 text-primary" />
+                          <span>{event.date}</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <Clock className="w-4 h-4 text-primary" />
+                          <span>{event.time} - {event.duration}</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <MapPin className="w-4 h-4 text-primary" />
+                          <span className="line-clamp-1">{event.location}</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <Users className="w-4 h-4 text-primary" />
+                          <span>{event.speakers} palestrantes</span>
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Calendar className="w-4 h-4 text-primary" />
-                        <span>{event.date}</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Clock className="w-4 h-4 text-primary" />
-                        <span>{event.time} - {event.duration}</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <MapPin className="w-4 h-4 text-primary" />
-                        <span className="line-clamp-1">{event.location}</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Users className="w-4 h-4 text-primary" />
-                        <span>{event.speakers} palestrantes</span>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-2">
+                    {/* Botões sempre na parte inferior */}
+                    <div className="flex gap-2 mt-auto">
                       <button type="button" className="flex-1 px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
                         Inscrever-se
                       </button>
@@ -193,29 +211,38 @@ export const Events = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            {/* Setas ocultas para funcionalidade */}
+            <CarouselPrevious className="hidden" />
+            <CarouselNext className="hidden" />
           </Carousel>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-br from-primary to-blue-600 text-white rounded-3xl p-8 text-center">
-          <h3 className="text-3xl font-bold mb-4">
-            Não Perca Nenhum Evento
-          </h3>
-          <p className="text-xl text-white/90 mb-6 max-w-2xl mx-auto">
-            Receba notificações sobre nossos próximos eventos e mantenha-se sempre atualizado 
-            com as novidades da Liga de Neurologia Clínica.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Seu e-mail"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button type="button" className="px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Inscrever-se
-            </button>
+        {/* Destaque do Curso de IA */}
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+                <Calendar className="w-4 h-4" />
+                Destaque Especial
+              </div>
+              
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Curso de Inteligência Artificial
+              </h3>
+              
+              <p className="text-xl text-blue-100 mb-6 max-w-2xl mx-auto">
+                Objetivo: apresentar curso de IA aplicado à Medicina/Neurologia.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button type="button" className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                  Saiba Mais
+                </button>
+                <button type="button" className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                  Inscrever-se
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
