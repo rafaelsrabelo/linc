@@ -2,6 +2,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Award, GraduationCap, User } from 'lucide-react';
+import { useRef } from 'react';
 
 interface Orientador {
   id: string;
@@ -106,6 +107,8 @@ const orientadores: Orientador[] = [
 ];
 
 export const Orientadores = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -131,9 +134,8 @@ export const Orientadores = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('#orientadores-carousel [data-slot="carousel"]');
-              if (carousel) {
-                const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
+              if (carouselRef.current) {
+                const prevButton = carouselRef.current.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
               }
             }}
@@ -149,9 +151,8 @@ export const Orientadores = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('#orientadores-carousel [data-slot="carousel"]');
-              if (carousel) {
-                const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
+              if (carouselRef.current) {
+                const nextButton = carouselRef.current.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
               }
             }}
@@ -162,7 +163,7 @@ export const Orientadores = () => {
             </svg>
           </button>
           <Carousel
-            id="orientadores-carousel"
+            ref={carouselRef}
             opts={{
               align: "start",
               loop: true,

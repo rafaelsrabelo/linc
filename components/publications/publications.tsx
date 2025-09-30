@@ -2,6 +2,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { BookOpen, Calendar, Download, ExternalLink, FileText, Newspaper, Users } from 'lucide-react';
+import { useRef } from 'react';
 import { useState } from 'react';
 
 interface Publication {
@@ -116,6 +117,7 @@ const publications: Publication[] = [
 
 export const Publications = () => {
   const [filter, setFilter] = useState<string>('todos');
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const categories = [
     { key: 'todos', title: 'Todos', icon: FileText },
@@ -174,9 +176,8 @@ export const Publications = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('#publications-carousel [data-slot="carousel"]');
-              if (carousel) {
-                const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
+              if (carouselRef.current) {
+                const prevButton = carouselRef.current.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
               }
             }}
@@ -192,9 +193,8 @@ export const Publications = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('#publications-carousel [data-slot="carousel"]');
-              if (carousel) {
-                const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
+              if (carouselRef.current) {
+                const nextButton = carouselRef.current.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
               }
             }}
@@ -205,7 +205,7 @@ export const Publications = () => {
             </svg>
           </button>
           <Carousel
-            id="publications-carousel"
+            ref={carouselRef}
             opts={{
               align: "start",
               loop: true,

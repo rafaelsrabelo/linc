@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export const HeroSection = () => {
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-[#fff672]">
+    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-[#fff672] pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[20rem] lg:h-[36rem] items-center">
           {/* Conteúdo Principal - Lado Esquerdo */}
@@ -75,7 +75,7 @@ export const HeroSection = () => {
           <div className="relative h-[20rem] lg:h-full order-first lg:order-last flex items-center justify-center">
             <div className="relative w-full h-full max-w-lg">
               <Image
-                src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&auto=format&fit=crop&q=80"
+                src="/herosection.jpeg"
                 alt="Médicos e estudantes de medicina em ambiente hospitalar"
                 fill
                 className="object-cover rounded-2xl shadow-2xl"
