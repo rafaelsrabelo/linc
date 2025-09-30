@@ -3,7 +3,7 @@ import { ArrowRight, Brain, Calendar, Heart, Users } from "lucide-react"
 
 export const HeroSection = () => {
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)] pt-16">
+    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 min-h-[20rem] md:h-[36rem] items-center">
           <div className="flex flex-col items-center justify-center gap-6 md:items-start lg:items-start">
@@ -13,7 +13,7 @@ export const HeroSection = () => {
             </div>
 
             <h1 className="text-foreground text-balance font-extrabold text-4xl md:text-5xl lg:text-6xl leading-tight">
-              Transforme Seu Conhecimento em <span className="text-primary">Neurologia Clínica</span>
+              Transforme Seu Conhecimento em Neurologia Clínica
             </h1>
 
             <p className="text-muted-foreground text-pretty text-lg md:text-xl leading-relaxed">

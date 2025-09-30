@@ -35,14 +35,13 @@ export const Header = () => {
           <div className="flex h-16 items-center justify-between py-1">
             <Logo />
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
-              <NavLink href="/">Sobre</NavLink>
-              <NavLink href="/blog">Atividades</NavLink>
-              <NavLink href="/blog">Pesquisa</NavLink>
-              <NavLink href="/blog">Eventos</NavLink>
-              <NavLink href="/blog">Equipe</NavLink>
-            </nav>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center gap-6">
+        <NavLink href="/equipe">Equipe</NavLink>
+        <NavLink href="/atividades">Atividades</NavLink>
+        <NavLink href="/pesquisa">Pesquisa</NavLink>
+        <NavLink href="/eventos">Eventos</NavLink>
+      </nav>
 
             {/* Mobile Menu Button */}
             <button
@@ -73,11 +72,10 @@ export const Header = () => {
         }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-yellow-100 border-t border-white/10">
             <div className="flex flex-col space-y-2">
-              <NavLink href="/" onClick={closeMenu}>Sobre</NavLink>
-              <NavLink href="/blog" onClick={closeMenu}>Atividades</NavLink>
-              <NavLink href="/blog" onClick={closeMenu}>Pesquisa</NavLink>
-              <NavLink href="/blog" onClick={closeMenu}>Eventos</NavLink>
-              <NavLink href="/blog" onClick={closeMenu}>Equipe</NavLink>
+              <NavLink href="/equipe" onClick={closeMenu}>Equipe</NavLink>
+              <NavLink href="/atividades" onClick={closeMenu}>Atividades</NavLink>
+              <NavLink href="/pesquisa" onClick={closeMenu}>Pesquisa</NavLink>
+              <NavLink href="/eventos" onClick={closeMenu}>Eventos</NavLink>
             </div>
           </div>
         </div>

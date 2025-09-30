@@ -17,7 +17,7 @@ export const NavLink = ({ href, children, onClick }: NavLinkProps) => {
     if (path === '/') {
       return pathname === '/';
     }
-    return pathname.startsWith(path);
+    return pathname === path;
   };
 
   return (
