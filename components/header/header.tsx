@@ -42,9 +42,6 @@ export const Header = () => {
               <NavLink href="/blog">Pesquisa</NavLink>
               <NavLink href="/blog">Eventos</NavLink>
               <NavLink href="/blog">Equipe</NavLink>
-              <Button variant="secondary" asChild>
-                <Link href="https://app.beelink.beecoders.dev/">Começar</Link>
-              </Button>
             </nav>
 
             {/* Mobile Menu Button */}
