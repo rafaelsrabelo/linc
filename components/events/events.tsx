@@ -98,7 +98,7 @@ export const Events = () => {
   const filteredEvents = getFilteredEvents();
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -106,10 +106,10 @@ export const Events = () => {
             <Calendar className="w-4 h-4" />
             Próximos Eventos
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Eventos e Atividades
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Participe dos nossos eventos, workshops e simpósios para se manter atualizado 
             com as últimas tendências em neurologia clínica.
           </p>
@@ -123,7 +123,7 @@ export const Events = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#events-carousel [data-slot="carousel"]');
               if (carousel) {
                 const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
@@ -141,7 +141,7 @@ export const Events = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#events-carousel [data-slot="carousel"]');
               if (carousel) {
                 const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
@@ -154,6 +154,7 @@ export const Events = () => {
             </svg>
           </button>
           <Carousel
+            id="events-carousel"
             opts={{
               align: "start",
               loop: true,
@@ -163,35 +164,35 @@ export const Events = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {filteredEvents.map((event) => (
                 <CarouselItem key={event.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                  <div className="bg-gray-800 rounded-xl shadow-sm border border-gray-700 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
                     {/* Conteúdo principal */}
                     <div className="flex-1">
                       <div className="mb-4">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                        <h3 className="text-xl font-bold text-white mb-2 line-clamp-2">
                           {event.title}
                         </h3>
-                        <p className="text-sm text-gray-600 line-clamp-3">
+                        <p className="text-sm text-gray-300 line-clamp-3">
                           {event.description}
                         </p>
                       </div>
                       
                       <div className="space-y-3 mb-6">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <Calendar className="w-4 h-4 text-primary" />
                           <span>{event.date}</span>
                         </div>
                         
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <Clock className="w-4 h-4 text-primary" />
                           <span>{event.time} - {event.duration}</span>
                         </div>
                         
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <MapPin className="w-4 h-4 text-primary" />
                           <span className="line-clamp-1">{event.location}</span>
                         </div>
                         
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <Users className="w-4 h-4 text-primary" />
                           <span>{event.speakers} palestrantes</span>
                         </div>

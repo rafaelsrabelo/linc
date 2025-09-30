@@ -72,7 +72,7 @@ const membros: Membro[] = [
 
 export const Membros = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -80,10 +80,10 @@ export const Membros = () => {
             <User className="w-4 h-4" />
             Membros
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Nossos Membros
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Conheça os estudantes de Medicina que fazem parte da LINC e contribuem 
             para o desenvolvimento da neurologia clínica.
           </p>
@@ -96,7 +96,7 @@ export const Membros = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#membros-carousel [data-slot="carousel"]');
               if (carousel) {
                 const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
@@ -114,7 +114,7 @@ export const Membros = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#membros-carousel [data-slot="carousel"]');
               if (carousel) {
                 const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
@@ -127,6 +127,7 @@ export const Membros = () => {
             </svg>
           </button>
           <Carousel
+            id="membros-carousel"
             opts={{
               align: "start",
               loop: true,
@@ -136,7 +137,7 @@ export const Membros = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {membros.map((membro) => (
                 <CarouselItem key={membro.id} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full">
+                  <div className="bg-gray-800 rounded-xl shadow-sm border border-gray-700 p-6 hover:shadow-md transition-shadow h-full">
                     {/* Foto do Membro */}
                     <div className="flex justify-center mb-4">
                       <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -146,13 +147,13 @@ export const Membros = () => {
                     
                     {/* Nome e Cargo */}
                     <div className="text-center">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      <h3 className="text-lg font-semibold text-white mb-1">
                         {membro.name}
                       </h3>
                       <p className="text-sm text-primary font-medium mb-2">
                         {membro.position}
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-gray-400">
                         Gestão {membro.year}
                       </p>
                     </div>

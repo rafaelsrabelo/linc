@@ -61,7 +61,7 @@ const atividades: Atividade[] = [
 
 export const Atividades = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -69,10 +69,10 @@ export const Atividades = () => {
             <BookOpen className="w-4 h-4" />
             O que a LINC faz
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Nossas Atividades
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             A LINC desenvolve diversas atividades para promover o conhecimento em neurologia clínica 
             e preparar seus membros para a prática médica especializada.
           </p>
@@ -85,7 +85,7 @@ export const Atividades = () => {
             return (
               <div 
                 key={atividade.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow group"
+                className="bg-gray-800 rounded-xl shadow-sm border border-gray-700 p-6 hover:shadow-md transition-shadow group"
               >
                 {/* Ícone */}
                 <div className={`w-12 h-12 ${atividade.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
@@ -93,21 +93,21 @@ export const Atividades = () => {
                 </div>
                 
                 {/* Título */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-white mb-3">
                   {atividade.title}
                 </h3>
                 
                 {/* Descrição */}
-                <p className="text-gray-600 mb-4 text-sm">
+                <p className="text-gray-300 mb-4 text-sm">
                   {atividade.description}
                 </p>
                 
                 {/* Exemplos */}
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Exemplos:</h4>
+                  <h4 className="text-sm font-semibold text-white mb-2">Exemplos:</h4>
                   <ul className="space-y-1">
                     {atividade.examples.map((example) => (
-                      <li key={example} className="text-sm text-gray-600 flex items-center gap-2">
+                      <li key={example} className="text-sm text-gray-300 flex items-center gap-2">
                         <div className={`w-1.5 h-1.5 ${atividade.color} rounded-full`} />
                         {example}
                       </li>

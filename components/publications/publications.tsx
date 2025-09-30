@@ -150,7 +150,7 @@ export const Publications = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -158,10 +158,10 @@ export const Publications = () => {
             <FileText className="w-4 h-4" />
             Publicações & Notícias
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Conteúdo e Notícias
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Acompanhe as últimas publicações, notícias e materiais didáticos da Liga Acadêmica de Neurologia Clínica.
           </p>
         </div>
@@ -174,7 +174,7 @@ export const Publications = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#publications-carousel [data-slot="carousel"]');
               if (carousel) {
                 const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
@@ -192,7 +192,7 @@ export const Publications = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#publications-carousel [data-slot="carousel"]');
               if (carousel) {
                 const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
@@ -205,6 +205,7 @@ export const Publications = () => {
             </svg>
           </button>
           <Carousel
+            id="publications-carousel"
             opts={{
               align: "start",
               loop: true,
@@ -217,8 +218,8 @@ export const Publications = () => {
                 const colorClass = getColorForType(publication.type);
                 
                 return (
-                  <CarouselItem key={publication.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                <CarouselItem key={publication.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-gray-800 rounded-xl shadow-sm border border-gray-700 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
                       {/* Conteúdo principal */}
                       <div className="flex-1">
                         <div className="flex items-start gap-4 mb-4">
@@ -229,16 +230,16 @@ export const Publications = () => {
                             <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${colorClass} mb-2`}>
                               {publication.category}
                             </div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                              {publication.title}
-                            </h4>
-                            <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                              {publication.description}
-                            </p>
+                          <h4 className="text-lg font-semibold text-white mb-2 line-clamp-2">
+                            {publication.title}
+                          </h4>
+                          <p className="text-sm text-gray-300 mb-3 line-clamp-2">
+                            {publication.description}
+                          </p>
                           </div>
                         </div>
                         
-                        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
                           <div className="flex items-center gap-2">
                             <Calendar className="w-4 h-4" />
                             <span>{publication.date}</span>
@@ -248,7 +249,7 @@ export const Publications = () => {
                         
                         <div className="flex flex-wrap gap-2 mb-4">
                           {publication.tags.map((tag, index) => (
-                            <span key={index.toString()} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                            <span key={index.toString()} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
                               {tag}
                             </span>
                           ))}

@@ -120,7 +120,7 @@ export const Partners = () => {
             type="button"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#partners-carousel [data-slot="carousel"]');
               if (carousel) {
                 const prevButton = carousel.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
                 if (prevButton) prevButton.click();
@@ -138,7 +138,7 @@ export const Partners = () => {
             type="button"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
-              const carousel = document.querySelector('[data-slot="carousel"]');
+              const carousel = document.querySelector('#partners-carousel [data-slot="carousel"]');
               if (carousel) {
                 const nextButton = carousel.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
                 if (nextButton) nextButton.click();
@@ -151,6 +151,7 @@ export const Partners = () => {
             </svg>
           </button>
           <Carousel
+            id="partners-carousel"
             opts={{
               align: "start",
               loop: true,

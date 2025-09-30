@@ -30,7 +30,7 @@ export const Header = () => {
         />
       )}
       
-      <header className="fixed top-0 z-50 w-full border-b border-gray-200/30 bg-[#fff672] backdrop-blur-sm shadow-sm">
+      <header className="fixed top-0 z-50 w-full border-b border-gray-200/30 bg-[#fff672]/80 backdrop-blur-sm shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between py-1">
             <Logo />
