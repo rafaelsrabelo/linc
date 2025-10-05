@@ -2,6 +2,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { User } from 'lucide-react';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 interface Membro {
@@ -15,58 +16,177 @@ interface Membro {
 const membros: Membro[] = [
   {
     id: '1',
-    name: 'Ana Silva',
-    position: 'Presidente',
-    image: '/membros/ana-silva.jpg',
+    name: 'Ana Ester Cruz',
+    position: 'Marketing',
+    image: '/membros/ana-ester.webp',
     year: '2024'
   },
   {
     id: '2',
-    name: 'Carlos Santos',
-    position: 'Vice-Presidente',
-    image: '/membros/carlos-santos.jpg',
+    name: 'João Vitor Moreira',
+    position: 'Presidente e Coordenador de Marketing',
+    image: '/membros/joao-vitor.webp',
     year: '2024'
   },
   {
     id: '3',
-    name: 'Maria Oliveira',
-    position: 'Secretária',
-    image: '/membros/maria-oliveira.jpg',
+    name: 'Alessandra Fante',
+    position: 'Vice-Presidente e Coordenadora de Pesquisa',
+    image: '/membros/alessandra-fante.webp',
     year: '2024'
   },
   {
     id: '4',
-    name: 'João Costa',
-    position: 'Tesoureiro',
-    image: '/membros/joao-costa.jpg',
+    name: 'Enzo Parente',
+    position: 'Secretário',
+    image: '/membros/enzo-parente.webp',
     year: '2024'
   },
   {
     id: '5',
-    name: 'Fernanda Lima',
-    position: 'Diretora de Eventos',
-    image: '/membros/fernanda-lima.jpg',
+    name: 'Aline Vieira',
+    position: 'Coordenadora de Ensino',
+    image: '/membros/aline-vieira.webp',
     year: '2024'
   },
   {
     id: '6',
-    name: 'Pedro Alves',
-    position: 'Diretor de Pesquisa',
-    image: '/membros/pedro-alves.jpg',
+    name: 'Bruna Nobre',
+    position: 'Ensino e Extensão',
+    image: '/membros/bruna-nobre.webp',
     year: '2024'
   },
   {
     id: '7',
-    name: 'Larissa Ferreira',
-    position: 'Diretora de Extensão',
-    image: '/membros/larissa-ferreira.jpg',
+    name: 'Mariana Castelo Branco',
+    position: 'Ensino',
+    image: '/membros/mariana-castelo.webp',
     year: '2024'
   },
   {
     id: '8',
-    name: 'Rafael Souza',
-    position: 'Diretor de Comunicação',
-    image: '/membros/rafael-souza.jpg',
+    name: 'Camilly Sales',
+    position: 'Ensino e Pesquisa',
+    image: '/membros/camilly-sales.webp',
+    year: '2024'
+  },
+  {
+    id: '9',
+    name: 'Davi Feitosa',
+    position: 'Ensino',
+    image: '/membros/davi-feitosa.webp',
+    year: '2024'
+  },
+  {
+    id: '10',
+    name: 'Maria Eduarda Parente',
+    position: 'Ensino e Marketing',
+    image: '/membros/maria-eduarda.webp',
+    year: '2024'
+  },
+  {
+    id: '11',
+    name: 'Giovanna Costa',
+    position: 'Ensino',
+    image: '/membros/giovanna-costa.webp',
+    year: '2024'
+  },
+  {
+    id: '12',
+    name: 'Yorrana Ramos',
+    position: 'Ensino',
+    image: '/membros/yohanna-ramos.webp',
+    year: '2024'
+  },
+  {
+    id: '13',
+    name: 'Marina Medeiros',
+    position: 'Pesquisa',
+    image: '/membros/marina-medeiros.webp',
+    year: '2024'
+  },
+  {
+    id: '14',
+    name: 'Marina Maia',
+    position: 'Pesquisa e Marketing',
+    image: '/membros/marina-maia.webp',
+    year: '2024'
+  },
+  {
+    id: '15',
+    name: 'Rafaella Iughetti',
+    position: 'Pesquisa',
+    image: '/membros/rafaela.webp',
+    year: '2024'
+  },
+  {
+    id: '16',
+    name: 'Luiza Gripp',
+    position: 'Pesquisa',
+    image: '/membros/luiza.webp',
+    year: '2024'
+  },
+  {
+    id: '17',
+    name: 'Beatriz Gondim',
+    position: 'Pesquisa',
+    image: '/membros/beatriz-gondim.webp',
+    year: '2024'
+  },
+  {
+    id: '18',
+    name: 'Daniele Cavalcante',
+    position: 'Coordenadora de Extensão',
+    image: '/membros/daniele-cavalcante.webp',
+    year: '2024'
+  },
+  {
+    id: '19',
+    name: 'Giulia Ramalho',
+    position: 'Extensão',
+    image: '/membros/giulia.webp',
+    year: '2024'
+  },
+  {
+    id: '20',
+    name: 'Marilia Beatriz Araujo',
+    position: 'Extensão',
+    image: '/membros/maria-beatriz-araujo.webp',
+    year: '2024'
+  },
+  {
+    id: '21',
+    name: 'Ana Carolina Cavalcante',
+    position: 'Extensão',
+    image: '/membros/ana-carolina.webp',
+    year: '2024'
+  },
+  {
+    id: '22',
+    name: 'Caio Diniz',
+    position: 'Extensão',
+    image: '/membros/kaio-diniz.webp',
+    year: '2024'
+  },
+  {
+    id: '23',
+    name: 'Elizeu Herbster',
+    position: 'Extensão',
+    image: '/membros/elizeu.webp',
+    year: '2024'
+  },
+  {
+    id: '24',
+    name: 'Julia Câmara',
+    position: 'Marketing',
+    image: '/membros/julia-camara.webp',
+    year: '2024'
+  },
+  {
+    id: '25',
+    name: 'Victor Hugo',
+    position: 'Marketing',
+    image: '/membros/victor-hugo.webp',
     year: '2024'
   }
 ];
@@ -75,7 +195,7 @@ export const Membros = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-16 bg-gray-900">
+    <section id="membros" className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -142,7 +262,13 @@ export const Membros = () => {
                     {/* Foto do Membro */}
                     <div className="flex justify-center mb-4">
                       <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <User className="w-10 h-10 text-gray-400" />
+                        <Image 
+                          src={membro.image}
+                          alt={`Foto de ${membro.name}`}
+                          width={80}
+                          height={80}
+                          className="object-cover"
+                        />
                       </div>
                     </div>
                     
@@ -153,9 +279,6 @@ export const Membros = () => {
                       </h3>
                       <p className="text-sm text-primary font-medium mb-2">
                         {membro.position}
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        Gestão {membro.year}
                       </p>
                     </div>
                   </div>

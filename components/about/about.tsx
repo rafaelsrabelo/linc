@@ -2,7 +2,7 @@ import { Award, BookOpen, Brain, Heart, Star, Target, Users } from 'lucide-react
 
 export const About = () => {
   return (
-    <section className="py-16 bg-gray-900">
+    <section id="about" className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Header da Seção */}

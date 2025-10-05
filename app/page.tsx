@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { Membros } from "@/components/membros";
 import { Orientadores } from "@/components/orientadores";
+import { Partners } from "@/components/partners";
 // import { Partners } from "@/components/partners";
 import { Publications } from "@/components/publications";
 
@@ -17,10 +18,10 @@ export default function Home() {
       <HeroSection />
       <About />
       <Orientadores />
-      <Atividades />
-      <Membros />
+      {/* <Atividades /> */}
       <Events />
-      <Publications />
+      <Membros />
+      {/* <Publications /> */}
       {/* <Partners /> */}
       <Contact />
       <Footer />

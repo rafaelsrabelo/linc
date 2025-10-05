@@ -100,7 +100,7 @@ export const Events = () => {
   const filteredEvents = getFilteredEvents();
 
   return (
-    <section className="py-16 bg-gray-900">
+    <section id="eventos" className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">

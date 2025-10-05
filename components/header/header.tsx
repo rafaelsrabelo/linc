@@ -17,6 +17,17 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    closeMenu();
+  };
+
   return (
     <>
       {/* Mobile Overlay */}
@@ -37,10 +48,41 @@ export const Header = () => {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-6">
-        <NavLink href="/equipe">Equipe</NavLink>
-        <NavLink href="/atividades">Atividades</NavLink>
-        <NavLink href="/pesquisa">Pesquisa</NavLink>
-        <NavLink href="/eventos">Eventos</NavLink>
+        <button 
+          type="button"
+          onClick={() => scrollToSection('about')}
+          className="text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+        >
+          Sobre
+        </button>
+        <button 
+          type="button"
+          onClick={() => scrollToSection('orientadores')}
+          className="text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+        >
+          Nossos Orientadores
+        </button>
+        <button 
+          type="button"
+          onClick={() => scrollToSection('eventos')}
+          className="text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+        >
+          Eventos
+        </button>
+        <button 
+          type="button"
+          onClick={() => scrollToSection('curso-ia')}
+          className="text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+        >
+          Curso de I.A
+        </button>
+        <button 
+          type="button"
+          onClick={() => scrollToSection('membros')}
+          className="text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium"
+        >
+          Nossos Membros
+        </button>
       </nav>
 
             {/* Mobile Menu Button */}
@@ -72,10 +114,41 @@ export const Header = () => {
         }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white/10 border-t border-white/20">
             <div className="flex flex-col space-y-2">
-              <NavLink href="/equipe" onClick={closeMenu}>Equipe</NavLink>
-              <NavLink href="/atividades" onClick={closeMenu}>Atividades</NavLink>
-              <NavLink href="/pesquisa" onClick={closeMenu}>Pesquisa</NavLink>
-              <NavLink href="/eventos" onClick={closeMenu}>Eventos</NavLink>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('about')}
+                className="text-left text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium py-2 px-3 rounded"
+              >
+                Sobre
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('orientadores')}
+                className="text-left text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium py-2 px-3 rounded"
+              >
+                Nossos Orientadores
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('eventos')}
+                className="text-left text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium py-2 px-3 rounded"
+              >
+                Eventos
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('curso-ia')}
+                className="text-left text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium py-2 px-3 rounded"
+              >
+                Curso de I.A
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('membros')}
+                className="text-left text-gray-800 hover:text-blue-700 transition-colors duration-200 text-sm font-medium py-2 px-3 rounded"
+              >
+                Nossos Membros
+              </button>
             </div>
           </div>
         </div>

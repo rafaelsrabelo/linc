@@ -2,6 +2,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Award, GraduationCap, User } from 'lucide-react';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 interface Orientador {
@@ -18,7 +19,7 @@ const orientadores: Orientador[] = [
     id: '1',
     name: 'Dra. Àlissa Formiga',
     title: 'Neurologista',
-    image: '/orientadores/alissa-formiga.jpg',
+    image: '/orientadores/alissa-formiga.png',
     qualifications: [
       'Neurologista pelo Hospital Geral de Fortaleza',
       'Médica do Sono pelo Hospital Walter Cantídio - UFC',
@@ -34,7 +35,7 @@ const orientadores: Orientador[] = [
     id: '2',
     name: 'Dr. Marcelo Pinheiro',
     title: 'Neurologista',
-    image: '/orientadores/marcelo-pinheiro.jpg',
+    image: '/orientadores/marcelo.png',
     qualifications: [
       'Neurologista Adulto e Infantil pela USP - Ribeirão Preto',
       'Pós-graduado em Cuidados Paliativos pela USP - RP',
@@ -49,7 +50,7 @@ const orientadores: Orientador[] = [
     id: '3',
     name: 'Dr. Bruno Iepsen',
     title: 'Neurologista',
-    image: '/orientadores/bruno-iepsen.jpg',
+    image: '/orientadores/bruno.png',
     qualifications: [
       'Neurologista pelo HCFMUSP',
       'Complementação especializada em neurologia da cognição e comportamento pelo HCFMUSP',
@@ -64,7 +65,7 @@ const orientadores: Orientador[] = [
     id: '4',
     name: 'Dr. André Borges',
     title: 'Neurologista',
-    image: '/orientadores/andre-borges.jpg',
+    image: '/orientadores/andre-borges.png',
     qualifications: [
       'Neurologista pelo Hospital Geral de Fortaleza',
       'Especialização em Doenças Neurodegenerativas e Toxina Botulínica Terapêutica no HGF',
@@ -79,7 +80,7 @@ const orientadores: Orientador[] = [
     id: '5',
     name: 'Dra. Renata Carvalho',
     title: 'Neurologista',
-    image: '/orientadores/renata-carvalho.jpg',
+    image: '/orientadores/renata-carvalho.png',
     qualifications: [
       'Médica pela Faculdade de Medicina de Juazeiro do Norte (FMJ-CE)',
       'Neurologista pelo Hospital Geral de Fortaleza (HGF)',
@@ -94,7 +95,7 @@ const orientadores: Orientador[] = [
     id: '6',
     name: 'Dr. João José Carvalho',
     title: 'Neurologista',
-    image: '/orientadores/joao-jose-carvalho.jpg',
+    image: '/orientadores/joao-jose.png',
     qualifications: [
       'Mestre em Neurologia pela UFRJ',
       'Doutorado em Neurologia pela UNIFESP',
@@ -110,7 +111,7 @@ export const Orientadores = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-16 bg-gray-900">
+    <section className="py-16 bg-gray-900" id='orientadores'>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
@@ -177,7 +178,13 @@ export const Orientadores = () => {
                     {/* Foto do Orientador */}
                     <div className="flex justify-center mb-6">
                       <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <User className="w-12 h-12 text-gray-400" />
+                        <Image 
+                          src={orientador.image}
+                          alt={`Foto de ${orientador.name}`}
+                          width={96}
+                          height={96}
+                          className="object-cover"
+                        />
                       </div>
                     </div>
                     
