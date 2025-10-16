@@ -9,14 +9,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e Nome */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12">
-                <Logo className="w-full h-full" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white">LINC</h3>
-                <p className="text-sm text-gray-300">Liga Acadêmica de Neurologia Clínica</p>
-              </div>
+            <div className="mb-4">
+              <Logo />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Transformando o conhecimento em neurologia clínica desde 2022.
@@ -30,10 +24,10 @@ export const Footer = () => {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a 
-                  href="mailto:contato@lincneurologia.com.br" 
+                  href="mailto:lincunichristus@gmail.com" 
                   className="text-sm text-gray-300 hover:text-primary transition-colors"
                 >
-                  contato@lincneurologia.com.br
+                  lincunichristus@gmail.com
                 </a>
               </div>
             </div>
@@ -61,9 +55,6 @@ export const Footer = () => {
           <div className="text-center">
             <div className="text-sm text-gray-400">
               <p>© 2024 Liga Acadêmica de Neurologia Clínica. Todos os direitos reservados.</p>
-              <p className="mt-1">
-                Desenvolvido com ❤️ para a comunidade neurológica
-              </p>
             </div>
           </div>
         </div>

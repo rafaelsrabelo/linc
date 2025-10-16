@@ -16,177 +16,114 @@ interface Membro {
 const membros: Membro[] = [
   {
     id: '1',
-    name: 'Ana Ester Cruz',
-    position: 'Marketing',
-    image: '/membros/ana-ester.webp',
-    year: '2024'
-  },
-  {
-    id: '2',
     name: 'João Vitor Moreira',
     position: 'Presidente e Coordenador de Marketing',
     image: '/membros/joao-vitor.webp',
     year: '2024'
   },
   {
-    id: '3',
+    id: '2',
     name: 'Alessandra Fante',
     position: 'Vice-Presidente e Coordenadora de Pesquisa',
     image: '/membros/alessandra-fante.webp',
     year: '2024'
   },
   {
-    id: '4',
+    id: '3',
     name: 'Enzo Parente',
     position: 'Secretário',
     image: '/membros/enzo-parente.webp',
     year: '2024'
   },
   {
-    id: '5',
+    id: '4',
     name: 'Aline Vieira',
     position: 'Coordenadora de Ensino',
     image: '/membros/aline-vieira.webp',
     year: '2024'
   },
   {
-    id: '6',
+    id: '5',
     name: 'Bruna Nobre',
     position: 'Ensino e Extensão',
     image: '/membros/bruna-nobre.webp',
     year: '2024'
   },
   {
-    id: '7',
+    id: '6',
     name: 'Mariana Castelo Branco',
     position: 'Ensino',
     image: '/membros/mariana-castelo.webp',
     year: '2024'
   },
   {
-    id: '8',
+    id: '7',
     name: 'Camilly Sales',
     position: 'Ensino e Pesquisa',
     image: '/membros/camilly-sales.webp',
     year: '2024'
   },
   {
-    id: '9',
+    id: '8',
     name: 'Davi Feitosa',
     position: 'Ensino',
     image: '/membros/davi-feitosa.webp',
     year: '2024'
   },
   {
-    id: '10',
+    id: '9',
     name: 'Maria Eduarda Parente',
     position: 'Ensino e Marketing',
     image: '/membros/maria-eduarda.webp',
     year: '2024'
   },
   {
-    id: '11',
-    name: 'Giovanna Costa',
-    position: 'Ensino',
-    image: '/membros/giovanna-costa.webp',
-    year: '2024'
-  },
-  {
-    id: '12',
-    name: 'Yorrana Ramos',
-    position: 'Ensino',
-    image: '/membros/yohanna-ramos.webp',
-    year: '2024'
-  },
-  {
-    id: '13',
+    id: '10',
     name: 'Marina Medeiros',
     position: 'Pesquisa',
     image: '/membros/marina-medeiros.webp',
     year: '2024'
   },
   {
-    id: '14',
+    id: '11',
     name: 'Marina Maia',
     position: 'Pesquisa e Marketing',
     image: '/membros/marina-maia.webp',
     year: '2024'
   },
   {
-    id: '15',
-    name: 'Rafaella Iughetti',
-    position: 'Pesquisa',
-    image: '/membros/rafaela.webp',
-    year: '2024'
-  },
-  {
-    id: '16',
+    id: '12',
     name: 'Luiza Gripp',
     position: 'Pesquisa',
     image: '/membros/luiza.webp',
     year: '2024'
   },
   {
-    id: '17',
-    name: 'Beatriz Gondim',
-    position: 'Pesquisa',
-    image: '/membros/beatriz-gondim.webp',
-    year: '2024'
-  },
-  {
-    id: '18',
+    id: '13',
     name: 'Daniele Cavalcante',
     position: 'Coordenadora de Extensão',
     image: '/membros/daniele-cavalcante.webp',
     year: '2024'
   },
   {
-    id: '19',
+    id: '14',
     name: 'Giulia Ramalho',
     position: 'Extensão',
     image: '/membros/giulia.webp',
     year: '2024'
   },
   {
-    id: '20',
+    id: '15',
     name: 'Marilia Beatriz Araujo',
     position: 'Extensão',
     image: '/membros/maria-beatriz-araujo.webp',
     year: '2024'
   },
   {
-    id: '21',
+    id: '16',
     name: 'Ana Carolina Cavalcante',
     position: 'Extensão',
     image: '/membros/ana-carolina.webp',
-    year: '2024'
-  },
-  {
-    id: '22',
-    name: 'Caio Diniz',
-    position: 'Extensão',
-    image: '/membros/kaio-diniz.webp',
-    year: '2024'
-  },
-  {
-    id: '23',
-    name: 'Elizeu Herbster',
-    position: 'Extensão',
-    image: '/membros/elizeu.webp',
-    year: '2024'
-  },
-  {
-    id: '24',
-    name: 'Julia Câmara',
-    position: 'Marketing',
-    image: '/membros/julia-camara.webp',
-    year: '2024'
-  },
-  {
-    id: '25',
-    name: 'Victor Hugo',
-    position: 'Marketing',
-    image: '/membros/victor-hugo.webp',
     year: '2024'
   }
 ];
@@ -199,7 +136,7 @@ export const Membros = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 text-sm font-medium mb-6">
             <User className="w-4 h-4" />
             Membros
           </div>
@@ -217,7 +154,7 @@ export const Membros = () => {
           {/* Botão Anterior - Esquerda */}
           <button 
             type="button"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/40 border border-[#FFD700]/30 text-[#FFD700] rounded-full hover:bg-black/60 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
               if (carouselRef.current) {
                 const prevButton = carouselRef.current.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
@@ -234,7 +171,7 @@ export const Membros = () => {
           {/* Botão Próximo - Direita */}
           <button 
             type="button"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/40 border border-[#FFD700]/30 text-[#FFD700] rounded-full hover:bg-black/60 hover:border-[#FFD700] hover:text-[#FFD700] transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
               if (carouselRef.current) {
                 const nextButton = carouselRef.current.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
@@ -277,7 +214,7 @@ export const Membros = () => {
                       <h3 className="text-lg font-semibold text-white mb-1">
                         {membro.name}
                       </h3>
-                      <p className="text-sm text-primary font-medium mb-2">
+                      <p className="text-sm font-medium mb-2 text-gray-300">
                         {membro.position}
                       </p>
                     </div>

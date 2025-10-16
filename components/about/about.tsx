@@ -7,7 +7,7 @@ export const About = () => {
 
         {/* Header da Seção */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 text-sm font-medium mb-6">
             <Brain className="w-4 h-4" />
             LIGA ACADÊMICA DE NEUROLOGIA CLÍNICA
           </div>
@@ -39,9 +39,9 @@ export const About = () => {
         {/* Cards dos Objetivos */}
         <div className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-primary" />
+            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-700">
+              <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-gray-300" />
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Promover Conhecimento</h4>
               <p className="text-gray-300">
@@ -49,9 +49,9 @@ export const About = () => {
                 acadêmicas e científicas.
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-primary" />
+            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-700">
+              <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-gray-300" />
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Formar Profissionais</h4>
               <p className="text-gray-300">
@@ -59,9 +59,9 @@ export const About = () => {
                 profissionais da área neurológica.
               </p>
             </div>
-            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-primary" />
+            <div className="text-center p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-700">
+              <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-6 h-6 text-gray-300" />
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Cuidar de Pacientes</h4>
               <p className="text-gray-300">

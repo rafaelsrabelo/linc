@@ -1,0 +1,2 @@
+export { Instructor } from "./instructor";
+

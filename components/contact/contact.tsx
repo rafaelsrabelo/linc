@@ -41,20 +41,20 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+    <section id="contact" className="py-16 bg-gray-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Título e Descrição - 4 colunas */}
           <div className="lg:col-span-4">
             <div className="text-white">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 text-sm font-medium mb-6">
                 <MessageCircle className="w-4 h-4" />
                 Contato
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Entre em Contato
               </h2>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 Tem alguma dúvida ou sugestão? Estamos aqui para ajudar! Envie sua mensagem e entraremos em contato em breve.
               </p>
             </div>
@@ -62,11 +62,11 @@ export const Contact = () => {
 
           {/* Formulário - 8 colunas */}
           <div className="lg:col-span-8">
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-700">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
                     Nome Completo *
                   </label>
                   <input
@@ -76,13 +76,13 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-colors bg-gray-700 text-white"
                     placeholder="Seu nome completo"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
                     E-mail *
                   </label>
                   <input
@@ -92,14 +92,14 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-colors bg-gray-700 text-white"
                     placeholder="seu@email.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-800 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-semibold text-white mb-2">
                   Assunto *
                 </label>
                 <input
@@ -109,13 +109,13 @@ export const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors bg-white"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent transition-colors bg-gray-700 text-white"
                   placeholder="Assunto da sua mensagem"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-800 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
                   Mensagem *
                 </label>
                 <textarea
@@ -125,7 +125,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none bg-gray-700 text-white"
                   placeholder="Descreva sua dúvida, sugestão ou solicitação..."
                 />
               </div>
@@ -152,7 +152,7 @@ export const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 bg-[#D4AF37] text-black rounded-lg font-semibold hover:bg-[#B8860B] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>

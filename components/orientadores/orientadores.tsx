@@ -1,7 +1,7 @@
 "use client";
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Award, GraduationCap, User } from 'lucide-react';
+import { Award, GraduationCap, Instagram, User } from 'lucide-react';
 import Image from 'next/image';
 import { useRef } from 'react';
 
@@ -12,6 +12,7 @@ interface Orientador {
   image: string;
   qualifications: string[];
   specializations: string[];
+  instagram?: string;
 }
 
 const orientadores: Orientador[] = [
@@ -29,7 +30,8 @@ const orientadores: Orientador[] = [
       'Pós-graduanda em Gestão em Saúde - CBI of Miami',
       'Doutoranda em Medicina Translacional'
     ],
-    specializations: ['Neurologia', 'Medicina do Sono', 'Saúde Pública']
+    specializations: ['Neurologia', 'Medicina do Sono', 'Saúde Pública'],
+    instagram: 'insta_alissaformiga'
   },
   {
     id: '2',
@@ -44,7 +46,8 @@ const orientadores: Orientador[] = [
       'Pós-graduando em Transtorno do Espectro Autista - CBI of Miami',
       'Doutorando em Neurologia pela USP - RP'
     ],
-    specializations: ['Neurologia Adulto', 'Neurologia Infantil', 'Cuidados Paliativos']
+    specializations: ['Neurologia Adulto', 'Neurologia Infantil', 'Cuidados Paliativos'],
+    instagram: 'dr.marcelopinheiro'
   },
   {
     id: '3',
@@ -59,7 +62,8 @@ const orientadores: Orientador[] = [
       'Preceptor da Residência Médica em Neurologia do HGF',
       'Preceptor do curso de Medicina da Unichristus'
     ],
-    specializations: ['Neurologia Cognitiva', 'Neuropsiquiatria', 'Residência Médica']
+    specializations: ['Neurologia Cognitiva', 'Neuropsiquiatria', 'Residência Médica'],
+    instagram: 'drbrunoiepsen.neuro'
   },
   {
     id: '4',
@@ -74,7 +78,8 @@ const orientadores: Orientador[] = [
       'Preceptor da Residência Médica em Neurologia do HGF',
       'Professor do curso de Medicina da Unichristus'
     ],
-    specializations: ['Doenças Neurodegenerativas', 'Toxina Botulínica', 'Residência Médica']
+    specializations: ['Doenças Neurodegenerativas', 'Toxina Botulínica', 'Residência Médica'],
+    instagram: 'andreborgesfg'
   },
   {
     id: '5',
@@ -89,7 +94,8 @@ const orientadores: Orientador[] = [
       'Coordenadora do Serviço de Neurologia do Hospital Monte Klinikum',
       'Membro da Sociedade Brasileira de Cefaleia (SBCe) e da International Headache Society (IHS)'
     ],
-    specializations: ['Neurologia', 'Cefaleia', 'Tecnologia em Saúde']
+    specializations: ['Neurologia', 'Cefaleia', 'Tecnologia em Saúde'],
+    instagram: 'rcarvalho1983'
   },
   {
     id: '6',
@@ -103,7 +109,8 @@ const orientadores: Orientador[] = [
       'Membro fundador do Núcleo de Cefaleias e do Programa de AVC do Serviço de Neurologia do HGF',
       'Professor do curso de Medicina da UECE (2005-2010)'
     ],
-    specializations: ['Neurologia', 'Cefaleia', 'AVC']
+    specializations: ['Neurologia', 'Cefaleia', 'AVC'],
+    instagram: 'dr.joaojosecarvalho'
   }
 ];
 
@@ -115,7 +122,7 @@ export const Orientadores = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header da Seção */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 text-sm font-medium mb-6">
             <GraduationCap className="w-4 h-4" />
             Conheça nossos orientadores
           </div>
@@ -133,7 +140,7 @@ export const Orientadores = () => {
           {/* Botão Anterior - Esquerda */}
           <button 
             type="button"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 border border-gray-600 text-gray-300 rounded-full hover:bg-gray-700 hover:border-gray-500 hover:text-white transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
               if (carouselRef.current) {
                 const prevButton = carouselRef.current.querySelector('[data-slot="carousel-previous"]') as HTMLButtonElement;
@@ -150,7 +157,7 @@ export const Orientadores = () => {
           {/* Botão Próximo - Direita */}
           <button 
             type="button"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-gray-300 text-gray-600 rounded-full hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center justify-center shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 border border-gray-600 text-gray-300 rounded-full hover:bg-gray-700 hover:border-gray-500 hover:text-white transition-colors flex items-center justify-center shadow-lg"
             onClick={() => {
               if (carouselRef.current) {
                 const nextButton = carouselRef.current.querySelector('[data-slot="carousel-next"]') as HTMLButtonElement;
@@ -193,9 +200,21 @@ export const Orientadores = () => {
                       <h3 className="text-lg font-semibold text-white mb-1">
                         {orientador.name}
                       </h3>
-                      <p className="text-sm text-primary font-medium">
+                      <p className="text-sm text-gray-400 font-medium mb-2">
                         {orientador.title}
                       </p>
+                      {/* Instagram Link */}
+                      {orientador.instagram && (
+                        <a 
+                          href={`https://instagram.com/${orientador.instagram}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-gray-400 hover:text-white transition-colors text-xs"
+                        >
+                          <Instagram className="w-3 h-3" />
+                          <span>@{orientador.instagram}</span>
+                        </a>
+                      )}
                     </div>
                     
                     {/* Especializações */}
@@ -204,7 +223,7 @@ export const Orientadores = () => {
                         {orientador.specializations.map((spec) => (
                           <span 
                             key={spec}
-                            className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                            className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full"
                           >
                             {spec}
                           </span>
@@ -218,12 +237,12 @@ export const Orientadores = () => {
                       <ul className="space-y-1">
                         {orientador.qualifications.slice(0, 3).map((qualification) => (
                           <li key={qualification} className="text-xs text-gray-300 flex items-start gap-2">
-                            <Award className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
+                            <Award className="w-3 h-3 text-gray-400 mt-0.5 flex-shrink-0" />
                             <span className="line-clamp-2">{qualification}</span>
                           </li>
                         ))}
                         {orientador.qualifications.length > 3 && (
-                          <li className="text-xs text-primary font-medium">
+                          <li className="text-xs text-gray-400 font-medium">
                             +{orientador.qualifications.length - 3} outras qualificações
                           </li>
                         )}
