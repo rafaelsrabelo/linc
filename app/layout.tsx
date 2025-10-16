@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LINC Academy - Liga Acadêmica de Neurologia Clínica",
+  title: "Liga Acadêmica de Neurologia Clínica",
   description: "Liga Acadêmica de Neurologia Clínica dedicada ao avanço do conhecimento e prática em neurologia.",
 };
 

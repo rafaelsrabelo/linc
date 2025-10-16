@@ -8,7 +8,7 @@ export const Logo = ({ className = "" }: LogoProps) => {
   return (
     <Link 
       href="/" 
-      title="LINC Academy | Página Inicial"
+      title="Página Inicial"
       className={`text-white font-bold text-xl hover:text-gray-300 transition-colors py-1 ${className}`}
     >
       <div className="flex items-center gap-3">

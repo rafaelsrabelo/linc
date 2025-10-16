@@ -23,7 +23,7 @@ const publications: Publication[] = [
   // Notícias da Liga
   {
     id: '1',
-    title: 'LINC Academy Realiza Simpósio de Neurologia Clínica 2024',
+    title: 'LINC Realiza Simpósio de Neurologia Clínica 2024',
     type: 'noticias',
     category: 'Notícias da Liga',
     description: 'Evento reuniu mais de 200 profissionais para discussão de casos clínicos complexos e atualizações terapêuticas.',
@@ -37,7 +37,7 @@ const publications: Publication[] = [
     title: 'Nova Parceria com Hospital Universitário',
     type: 'noticias',
     category: 'Notícias da Liga',
-    description: 'LINC Academy estabelece parceria estratégica para ampliar oportunidades de estágio e pesquisa.',
+    description: 'LINC estabelece parceria estratégica para ampliar oportunidades de estágio e pesquisa.',
     date: '10 de Dezembro, 2024',
     author: 'Equipe LINC',
     tags: ['Parceria', 'Hospital', 'Pesquisa'],
@@ -104,7 +104,7 @@ const publications: Publication[] = [
   // Press
   {
     id: '8',
-    title: 'LINC Academy é Destaque em Revista Médica',
+    title: 'LINC é Destaque em Revista Médica',
     type: 'press',
     category: 'Press',
     description: 'Matéria sobre os avanços da Liga Acadêmica de Neurologia Clínica em revista especializada.',
