@@ -43,28 +43,7 @@ export const Certificates = () => {
                   em nossa pasta do Google Drive. Acesse e baixe seus certificados quando necessário.
                 </p>
                 
-                {/* Features */}
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-[#D4AF37]" />
-                    <span className="text-gray-300">Certificados de eventos</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Award className="w-5 h-5 text-[#D4AF37]" />
-                    <span className="text-gray-300">Certificados de cursos</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <GraduationCap className="w-5 h-5 text-[#D4AF37]" />
-                    <span className="text-gray-300">Certificados de atividades</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Download className="w-5 h-5 text-[#D4AF37]" />
-                    <span className="text-gray-300">Download gratuito</span>
-                  </div>
-                </div> */}
               </div>
-
-              {/* Action Button */}
               <div className="flex-shrink-0">
                 <a
                   href="https://drive.google.com/drive/u/2/folders/1ktzd5qffOnks2Uerci91-zmNqjG0BK9j"
