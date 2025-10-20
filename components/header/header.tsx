@@ -38,6 +38,7 @@ export const Header = () => {
     { label: 'A LINC', section: 'about' },
     { label: 'Imersão Glia', section: 'eventos' },
     { label: 'Formação Profissional', section: 'orientadores' },
+    { label: 'Certificados', section: 'certificados' },
     { label: 'Membros', section: 'membros' },
     { label: 'Contato', section: 'contact' },
   ];

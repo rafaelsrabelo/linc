@@ -1,5 +1,6 @@
 import { About } from "@/components/about";
 import { Atividades } from "@/components/atividades";
+import { Certificates } from "@/components/certificates";
 import { Contact } from "@/components/contact";
 import { Events } from "@/components/events";
 import { Footer } from "@/components/footer";
@@ -21,6 +22,7 @@ export default function Home() {
       {/* <Atividades /> */}
       <Events />
       <Membros />
+      <Certificates />
       {/* <Publications /> */}
       {/* <Partners /> */}
       <Contact />
