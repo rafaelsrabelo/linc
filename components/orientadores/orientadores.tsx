@@ -31,7 +31,7 @@ const orientadores: Orientador[] = [
       'Doutoranda em Medicina Translacional'
     ],
     specializations: ['Neurologia', 'Medicina do Sono', 'Saúde Pública'],
-    instagram: 'insta_alissaformiga'
+    instagram: 'alissaformiga'
   },
   {
     id: '2',
