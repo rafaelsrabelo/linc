@@ -18,7 +18,7 @@ interface Orientador {
 const orientadores: Orientador[] = [
   {
     id: '1',
-    name: 'Dra. Àlissa Formiga',
+    name: 'Dra. Álissa Formiga',
     title: 'Neurologista',
     image: '/orientadores/alissa-formiga.png',
     qualifications: [
