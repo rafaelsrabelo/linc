@@ -43,7 +43,7 @@ export const HeroSection = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tight">
               <span className="block font-bold">LIGA ACADÊMICA</span>
               <span className="block bg-gradient-to-r from-[#D4AF37] via-[#D4AF37] to-[#D4AF37] bg-clip-text text-transparent font-bold">
-                EM NEUROLOGIA
+                DE NEUROLOGIA
               </span>
               <span className="block text-3xl md:text-4xl lg:text-5xl text-[#D4AF37] font-medium tracking-wider">
                 CLÍNICA
