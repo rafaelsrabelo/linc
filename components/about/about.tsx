@@ -9,7 +9,7 @@ export const About = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 text-sm font-medium mb-6">
             <Brain className="w-4 h-4" />
-            LIGA ACADÊMICA EM NEUROLOGIA CLÍNICA
+            LIGA ACADÊMICA DE NEUROLOGIA CLÍNICA
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">
             Sobre a LINC

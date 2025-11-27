@@ -125,6 +125,13 @@ const membros: Membro[] = [
     position: 'Extensão',
     image: '/membros/ana-carolina.webp',
     year: '2024'
+  },
+  {
+    id: '17',
+    name: 'Kaio Rodrigues',
+    position: 'Marketing/Extensão',
+    image: '/membros/kaio.jpeg',
+    year: '2024'
   }
 ];
 
