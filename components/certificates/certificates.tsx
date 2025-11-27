@@ -46,7 +46,7 @@ export const Certificates = () => {
               </div>
               <div className="flex-shrink-0">
                 <a
-                  href="https://drive.google.com/drive/u/2/folders/1ktzd5qffOnks2Uerci91-zmNqjG0BK9j"
+                  href="https://forms.gle/FR6r1Dw4b3aBDnhdA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#B8860B] text-black font-semibold px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
