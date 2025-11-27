@@ -23,11 +23,10 @@ const orientadores: Orientador[] = [
     image: '/orientadores/alissa-formiga.png',
     qualifications: [
       'Neurologista pelo Hospital Geral de Fortaleza',
-      'Médica do Sono pelo Hospital Walter Cantídio - UFC',
-      'Mestre em Ciências Médicas - UFC',
-      'Professora do curso de Medicina da Unichristus',
-      'Especialista em Saúde Pública - UFC',
-      'Pós-graduanda em Gestão em Saúde - CBI of Miami',
+      'Médica do Sono pelo Hospital Walter Cantídio - Universidade Federal do Ceará - UFC',
+      'Mestre em Ciências Médicas - Universidade Federal do Ceará - UFC',
+      'Professora do curso de Medicina da Unichristus - Fortaleza - CE',
+      'Especialista em Saúde Pública - Universidade Federal do Ceará - UFC',
       'Doutoranda em Medicina Translacional'
     ],
     specializations: ['Neurologia', 'Medicina do Sono', 'Saúde Pública'],
@@ -55,12 +54,13 @@ const orientadores: Orientador[] = [
     title: 'Neurologista',
     image: '/orientadores/bruno.png',
     qualifications: [
-      'Neurologista pelo HCFMUSP',
+      'Neurologista pelo Hospital das Clínicas da Faculdade de Medicina da Universidade de São Paulo (HCFMUSP)',
       'Complementação especializada em neurologia da cognição e comportamento pelo HCFMUSP',
-      'Membro titular da Academia Brasileira de Neurologia',
+      'Membro titular da Academia Brasileira de Neurologia (ABN)',
       'Editor do @neuropsigeri',
-      'Preceptor da Residência Médica em Neurologia do HGF',
-      'Preceptor do curso de Medicina da Unichristus'
+      'Coordenador da Residência Médica em Neurologia do Hospital Geral de Fortaleza',
+      'Preceptor do curso de Medicina da Unichristus',
+      'Diretor científico da associação brasileira de Alzheimer (ABRAZ)'
     ],
     specializations: ['Neurologia Cognitiva', 'Neuropsiquiatria', 'Residência Médica'],
     instagram: 'drbrunoiepsen.neuro'
@@ -72,10 +72,10 @@ const orientadores: Orientador[] = [
     image: '/orientadores/andre-borges.png',
     qualifications: [
       'Neurologista pelo Hospital Geral de Fortaleza',
-      'Especialização em Doenças Neurodegenerativas e Toxina Botulínica Terapêutica no HGF',
+      'Especialização em Doenças Neurodegenerativas e uso de Toxina Botulínica Terapêutica no Hospital Geral de Fortaleza',
       'Mestre em Ciências Médicas pela Universidade de Fortaleza',
-      'Membro titular da Academia Brasileira de Neurologia',
-      'Preceptor da Residência Médica em Neurologia do HGF',
+      'Membro titular da Academia Brasileira de Neurologia (ABN)',
+      'Preceptor da Residência Médica em Neurologia do Hospital Geral de Fortaleza',
       'Professor do curso de Medicina da Unichristus'
     ],
     specializations: ['Doenças Neurodegenerativas', 'Toxina Botulínica', 'Residência Médica'],
@@ -89,8 +89,8 @@ const orientadores: Orientador[] = [
     qualifications: [
       'Médica pela Faculdade de Medicina de Juazeiro do Norte (FMJ-CE)',
       'Neurologista pelo Hospital Geral de Fortaleza (HGF)',
-      'Docente e preceptora do curso de Medicina da UNICHRISTUS',
-      'Mestranda em Tecnologia e Inovação em Saúde no Centro Universitário Christus',
+      'Docente do curso de medicina do centro universitário christus (UNICHRISTUS)',
+      'Mestrado em Tecnologia e Inovação em Saúde no Centro Universitário Christus (UNICHRISTUS)',
       'Coordenadora do Serviço de Neurologia do Hospital Monte Klinikum',
       'Membro da Sociedade Brasileira de Cefaleia (SBCe) e da International Headache Society (IHS)'
     ],
@@ -103,14 +103,47 @@ const orientadores: Orientador[] = [
     title: 'Neurologista',
     image: '/orientadores/joao-jose.png',
     qualifications: [
+      'Doutor em Neurologia/Neurociências pela UNIFESP - Escola Paulista de Medicina',
       'Mestre em Neurologia pela UFRJ',
-      'Doutorado em Neurologia pela UNIFESP',
-      'Professor e Coordenador Adjunto do curso de Medicina da Unichristus',
-      'Membro fundador do Núcleo de Cefaleias e do Programa de AVC do Serviço de Neurologia do HGF',
-      'Professor do curso de Medicina da UECE (2005-2010)'
+      'Membro Fundador do Núcleo de Cefaleias do Servico de Neurologia do Hospital Geral de Fortaleza',
+      'Membro da Association for the Advancement of Artificial Intelligence (AAAI) - EUA',
+      'Criador do workshop "Inteligência Artificial na Medicina"',
+      'Professor de Inteligência Artificial na Medicina',
+      'Certificado em Artificial Intelligence in Health Care (MIT)'
     ],
-    specializations: ['Neurologia', 'Cefaleia', 'AVC'],
+    specializations: ['Neurologia', 'Cefaleia', 'Inteligência Artificial'],
     instagram: 'dr.joaojosecarvalho'
+  },
+  {
+    id: '7',
+    name: 'Dr. George Linard',
+    title: 'Neurologista',
+    image: '/orientadores/george-linard.png',
+    qualifications: [
+      'Médico pela Universidade Federal do Ceará (UFC)',
+      'Residência em Neurologia - HC/Unicamp',
+      'Residência em Epilepsia e EEG - HC/Unicamp',
+      'MBA Executivo em Saúde',
+      'Mestre em Ciências Médicas',
+      'Diretor da Neuroteste'
+    ],
+    specializations: ['Neurologia', 'Epilepsia', 'EEG'],
+    instagram: undefined
+  },
+  {
+    id: '8',
+    name: 'Dra. Stephanie Scott',
+    title: 'Neurologista',
+    image: '/orientadores/stephanie-scott.png',
+    qualifications: [
+      'Neurologista pelo Hospital Universitário Walter Cantidio - Universidade Federal do Ceará - UFC',
+      'Mestre em Ciências Médicas pela Universidade Federal do Ceará - UFC',
+      'Especialista em Saúde da Família pela Universidade Federal do Ceará - UFC',
+      'Professora do curso de Medicina da Unichristus',
+      'Doutoranda pelo Programa de Ciências Médicas da Universidade Federal do Ceará - UFC'
+    ],
+    specializations: ['Neurologia', 'Saúde da Família', 'Ciências Médicas'],
+    instagram: undefined
   }
 ];
 
