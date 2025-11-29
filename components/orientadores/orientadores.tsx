@@ -118,7 +118,7 @@ const orientadores: Orientador[] = [
     id: '7',
     name: 'Dr. George Linard',
     title: 'Neurologista',
-    image: '/orientadores/george-linard.png',
+    image: '/orientadores/george-linard.jpg',
     qualifications: [
       'Médico pela Universidade Federal do Ceará (UFC)',
       'Residência em Neurologia - HC/Unicamp',
@@ -134,7 +134,7 @@ const orientadores: Orientador[] = [
     id: '8',
     name: 'Dra. Stephanie Scott',
     title: 'Neurologista',
-    image: '/orientadores/stephanie-scott.png',
+    image: '/orientadores/stephanie-scott.jpeg',
     qualifications: [
       'Neurologista pelo Hospital Universitário Walter Cantidio - Universidade Federal do Ceará - UFC',
       'Mestre em Ciências Médicas pela Universidade Federal do Ceará - UFC',
