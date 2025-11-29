@@ -14,125 +14,187 @@ interface Membro {
 }
 
 const membros: Membro[] = [
+  // PRESIDÊNCIA
   {
     id: '1',
     name: 'João Vitor Moreira',
-    position: 'Presidente e Coordenador de Marketing',
-    image: '/membros/joao-vitor.webp',
+    position: 'Presidente',
+    image: '/membros/JOAO VITOR MOREIRA.jpeg',
     year: '2024'
   },
   {
     id: '2',
-    name: 'Alessandra Fante',
-    position: 'Vice-Presidente e Coordenadora de Pesquisa',
-    image: '/membros/alessandra-fante.webp',
+    name: 'Marina Maia',
+    position: 'Vice-Presidente',
+    image: '/membros/MARINA MAIA.jpeg',
     year: '2024'
   },
   {
     id: '3',
     name: 'Enzo Parente',
-    position: 'Secretário',
-    image: '/membros/enzo-parente.webp',
+    position: 'Conselheiro',
+    image: '/membros/ENZO PARENTE.jpeg',
     year: '2024'
   },
+  // SECRETARIA
   {
     id: '4',
-    name: 'Aline Vieira',
-    position: 'Coordenadora de Ensino',
-    image: '/membros/aline-vieira.webp',
+    name: 'Luiza Gripp',
+    position: 'Secretaria',
+    image: '/membros/LUIZA GRIPP.jpeg',
     year: '2024'
   },
   {
     id: '5',
-    name: 'Bruna Nobre',
-    position: 'Ensino e Extensão',
-    image: '/membros/bruna-nobre.webp',
+    name: 'Maria Giulia Bezerra',
+    position: 'Secretaria',
+    image: '/membros/MARIA GIULIA BEZERRA.jpeg',
     year: '2024'
   },
+  // ENSINO
   {
     id: '6',
-    name: 'Mariana Castelo Branco',
-    position: 'Ensino',
-    image: '/membros/mariana-castelo.webp',
-    year: '2024'
-  },
-  {
-    id: '7',
-    name: 'Camilly Sales',
-    position: 'Ensino e Pesquisa',
-    image: '/membros/camilly-sales.webp',
+    name: 'Bruna Nobre',
+    position: 'Coordenadora de Ensino',
+    image: '/membros/BRUNA NOBRE.jpeg',
     year: '2024'
   },
   {
     id: '8',
-    name: 'Davi Feitosa',
+    name: 'Aline Vieira',
     position: 'Ensino',
-    image: '/membros/davi-feitosa.webp',
+    image: '/membros/ALINE VIEIRA.jpeg',
     year: '2024'
   },
   {
     id: '9',
-    name: 'Maria Eduarda Parente',
-    position: 'Ensino e Marketing',
-    image: '/membros/maria-eduarda.webp',
+    name: 'Beatriz Bezerra',
+    position: 'Ensino',
+    image: '/membros/BEATRIZ BEZERRA.jpeg',
     year: '2024'
   },
   {
     id: '10',
-    name: 'Marina Medeiros',
-    position: 'Pesquisa',
-    image: '/membros/marina-medeiros.webp',
+    name: 'Davi Feitosa',
+    position: 'Ensino',
+    image: '/membros/DAVI FEITOSA.jpeg',
     year: '2024'
   },
   {
     id: '11',
-    name: 'Marina Maia',
-    position: 'Pesquisa e Marketing',
-    image: '/membros/marina-maia.webp',
+    name: 'Mariana Barros',
+    position: 'Ensino',
+    image: '/membros/MARIANA BARROS.jpeg',
     year: '2024'
   },
   {
     id: '12',
-    name: 'Luiza Gripp',
-    position: 'Pesquisa',
-    image: '/membros/luiza.webp',
+    name: 'Davi Fonseca',
+    position: 'Ensino',
+    image: '/membros/DAVI FONSECA.jpeg',
     year: '2024'
   },
   {
     id: '13',
-    name: 'Daniele Cavalcante',
-    position: 'Coordenadora de Extensão',
-    image: '/membros/daniele-cavalcante.webp',
+    name: 'Davi Liebmann',
+    position: 'Ensino',
+    image: '/membros/DAVI LIEBMANN.jpeg',
     year: '2024'
   },
+  // PESQUISA
   {
     id: '14',
-    name: 'Giulia Ramalho',
-    position: 'Extensão',
-    image: '/membros/giulia.webp',
+    name: 'Camilly Sales',
+    position: 'Coordenadora de Pesquisa',
+    image: '/membros/CAMILLY SALES.jpeg',
     year: '2024'
   },
   {
     id: '15',
-    name: 'Marilia Beatriz Araujo',
-    position: 'Extensão',
-    image: '/membros/maria-beatriz-araujo.webp',
+    name: 'Maria Luisa Brandão',
+    position: 'Coordenadora de Pesquisa',
+    image: '/membros/MARIA LUISA BRANDAO.jpeg',
     year: '2024'
   },
   {
     id: '16',
-    name: 'Ana Carolina Cavalcante',
-    position: 'Extensão',
-    image: '/membros/ana-carolina.webp',
+    name: 'Maria Eduarda Aguiar',
+    position: 'Pesquisa',
+    image: '/membros/MARIA EDUARDA AGUIAR.jpg',
     year: '2024'
   },
   {
     id: '17',
-    name: 'Kaio Rodrigues',
-    position: 'Marketing/Extensão',
-    image: '/membros/kaio.jpeg',
+    name: 'Julia Brito',
+    position: 'Pesquisa',
+    image: '/membros/JULIA BRITO.jpeg',
     year: '2024'
-  }
+  },
+  {
+    id: '18',
+    name: 'Marina Medeiros',
+    position: 'Pesquisa',
+    image: '/membros/MARINA MEDEIROS.jpeg',
+    year: '2024'
+  },
+  {
+    id: '19',
+    name: 'Marilia Araujo',
+    position: 'Pesquisa',
+    image: '/membros/MARÍLIA ARAÚJO.jpeg',
+    year: '2024'
+  },
+  {
+    id: '20',
+    name: 'Giulia Ramalho',
+    position: 'Pesquisa',
+    image: '/membros/GIULIA RAMALHO.jpeg',
+    year: '2024'
+  },
+  {
+    id: '21',
+    name: 'Alessandra Fante',
+    position: 'Pesquisa',
+    image: '/membros/ALESSANDRA FANTE.jpeg',
+    year: '2024'
+  },
+  {
+    id: '22',
+    name: 'Pedro Henrique Pinheiro',
+    position: 'Pesquisa',
+    image: '/membros/PEDRO HENRIQUE PINHEIRO.jpeg',
+    year: '2024'
+  },
+  // EXTENSÃO
+  {
+    id: '23',
+    name: 'Ana Carolina Matos',
+    position: 'Coordenadora de Extensão',
+    image: '/membros/ANA CAROLINA MATOS.jpeg',
+    year: '2024'
+  },
+  {
+    id: '25',
+    name: 'Marina Ramos',
+    position: 'Extensão',
+    image: '/membros/MARINA RAMOS.jpeg',
+    year: '2024'
+  },
+  {
+    id: '26',
+    name: 'Luísa Reis',
+    position: 'Extensão',
+    image: '/membros/LUISA REIS.jpeg',
+    year: '2024'
+  },
+  // MARKETING
+  {
+    id: '31',
+    name: 'Kaio Rodrigues',
+    position: 'Marketing',
+    image: '/membros/KAIO RODRIGUES.jpeg',
+    year: '2024'
+  },
 ];
 
 export const Membros = () => {
@@ -238,3 +300,4 @@ export const Membros = () => {
     </section>
   );
 };
+
