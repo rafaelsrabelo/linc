@@ -54,7 +54,7 @@ export const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="text-center">
             <div className="text-sm text-gray-400">
-              <p>© 2024 Liga Acadêmica de Neurologia Clínica. Todos os direitos reservados.</p>
+              <p>© 2024 Liga Acadêmica em Neurologia Clínica. Todos os direitos reservados.</p>
             </div>
           </div>
         </div>

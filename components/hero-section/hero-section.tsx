@@ -12,7 +12,7 @@ export const HeroSection = () => {
         <div className="relative w-full h-full">
           <Image
             src="/owl.png"
-            alt="Coruja sábia - símbolo da Liga Acadêmica de Neurologia"
+            alt="Coruja sábia - símbolo da Liga Acadêmica em Neurologia"
             fill
             className="object-cover object-top"
             priority

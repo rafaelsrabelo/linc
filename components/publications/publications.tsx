@@ -107,7 +107,7 @@ const publications: Publication[] = [
     title: 'LINC é Destaque em Revista Médica',
     type: 'press',
     category: 'Press',
-    description: 'Matéria sobre os avanços da Liga Acadêmica de Neurologia Clínica em revista especializada.',
+    description: 'Matéria sobre os avanços da Liga Acadêmica em Neurologia Clínica em revista especializada.',
     date: '15 de Novembro, 2024',
     author: 'Revista Médica',
     tags: ['Mídia', 'Destaque', 'Reconhecimento'],
@@ -164,7 +164,7 @@ export const Publications = () => {
             Conteúdo e Notícias
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Acompanhe as últimas publicações, notícias e materiais didáticos da Liga Acadêmica de Neurologia Clínica.
+            Acompanhe as últimas publicações, notícias e materiais didáticos da Liga Acadêmica em Neurologia Clínica.
           </p>
         </div>
 

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Liga Acadêmica de Neurologia Clínica",
-  description: "Liga Acadêmica de Neurologia Clínica dedicada ao avanço do conhecimento e prática em neurologia.",
+  title: "Liga Acadêmica em Neurologia Clínica",
+  description: "Liga Acadêmica em Neurologia Clínica dedicada ao avanço do conhecimento e prática em neurologia.",
 };
 
 export default function RootLayout({
